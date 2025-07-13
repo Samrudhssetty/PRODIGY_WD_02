@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch - Precision Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stopwatch-card">
+            <!-- Header -->
+            <div class="header">
+                <div class="title-section">
+                    <svg class="clock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                    <h1>Stopwatch</h1>
+                </div>
+                <p class="subtitle">Precision timing with lap tracking</p>
+            </div>
+
+            <!-- Time Display -->
+            <div class="time-display">
+                <div class="time-text" id="timeDisplay">00:00.00</div>
+                <div class="time-format">mm:ss.ms</div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button id="startStopBtn" class="btn btn-start">
+                    <svg class="btn-icon" id="playIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
+                    <svg class="btn-icon hidden" id="pauseIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <span id="startStopText">Start</span>
+                </button>
+
+                <button id="resetBtn" class="btn btn-reset">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="1,4 1,10 7,10"></polyline>
+                        <path d="M3.51,15a9,9,0,0,0,2.13,3.09,9,9,0,0,0,13.72,0,9,9,0,0,0,0-12.72,9,9,0,0,0-13.72,0L3.51,9"></path>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <!-- Lap Button -->
+            <button id="lapBtn" class="btn btn-lap" disabled>
+                Record Lap
+            </button>
+
+            <!-- Lap Times -->
+            <div id="lapSection" class="lap-section hidden">
+                <h3 class="lap-title">Lap Times</h3>
+                <div id="lapList" class="lap-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
